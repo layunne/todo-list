@@ -1,0 +1,25 @@
+version: "3.4"
+
+services:
+
+  todo-list-backend:
+    image: todo-list-backend:dev
+    depends_on:
+      - database
+    env_file:
+      - .env
+    networks:
+      - net-todo-list
+
+  database:
+    image: mongo:4.2
+    ports:
+      - 27017:27017
+    networks:
+      - net-todo-list
+    volumes:
+      - "./data/todo-list:/data/db"
+
+networks:
+  net-todo-list:
+

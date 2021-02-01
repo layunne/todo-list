@@ -1,0 +1,6 @@
+
+go.sum
+.DS_Store
+app
+*.iml
+.idea
